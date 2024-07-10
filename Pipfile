@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 mediapipe = "*"
 opencv-python = "*"
+python-osc = "*"
 
 [dev-packages]
 

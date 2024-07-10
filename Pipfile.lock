@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "c662c67f3fee86efd21c80e2cc41e95e1976ed1b1cb5ed58c16db85303704e96"
+            "sha256": "3f23197691944f6f862f7cf783cabe247cd156bb0bf775b945aa8bb8e2361c78"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -479,7 +479,7 @@
                 "sha256:fbd6acc766814ea6443628f4e6751d0da6593dae29c08c0b2606164db026970c",
                 "sha256:feff59f27338135776f6d4e2ec7aeeac5d5f7a08a83e80869121ef8164b74af9"
             ],
-            "markers": "python_version >= '3.9'",
+            "markers": "python_version >= '3.10'",
             "version": "==2.0.0"
         },
         "opencv-contrib-python": {
@@ -651,6 +651,15 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==2.9.0.post0"
+        },
+        "python-osc": {
+            "hashes": [
+                "sha256:6fa7e5cf7690057712c26e5f67a747126e6a5f481a40792aad0f25ac3edee815",
+                "sha256:a5ce1ba56c8d82df51cb3f2946b5dd33a70522791acc4b8564e62d2b20ad9caa"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.7'",
+            "version": "==1.8.3"
         },
         "scipy": {
             "hashes": [

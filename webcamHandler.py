@@ -1,6 +1,8 @@
 import cv2
 import mediapipe as mp
-
+from pythonosc import udp_client
+# Initialize OSC client.
+client = udp_client.SimpleUDPClient("127.0.0.1", 39539)
 class WebcamHandler:
     def __init__(self,camera_index=0):
         self.webCam=cv2.VideoCapture(camera_index)
@@ -38,6 +40,15 @@ class WebcamHandler:
         image_bgr = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2BGR)
         if results.pose_landmarks:
             self.mp_drawing.draw_landmarks(image_bgr, results.pose_landmarks,self.mp_pose.POSE_CONNECTIONS)
+            for idx, landmark in enumerate(results.pose_landmarks.landmark):
+                if idx==16:#right wrist
+                    x = landmark.x
+                    y = landmark.y
+                    z = landmark.z
+                    visibility = landmark.visibility
+                    # VMC protocol expects OSC messages for each joint.
+                    # Format your OSC message here. Example format:
+                    client.send_message(f"/VMC/Ext/Bone/Pos/{idx}", [x,y,z, visibility])
         cv2.imshow('MediaPipe Pose Detection', image_bgr)
     
     def get_fps(self):
